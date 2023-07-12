@@ -43,4 +43,15 @@ class DinosaurTest extends TestCase
         $dino = new Dinosaur(name: 'Big Eaty', length: 10);
         self::assertSame('Large', $dino->getSizeDescription(), 'This is supposed to be a Large dino');
     }
+
+    public function testDinoBetween5And9MetersIsMedium():void
+    {
+        $dino = new Dinosaur(name: 'Big Eaty', length: 5);
+        self::assertSame('Medium', $dino->getSizeDescription(), 'This is supposed to be a Medium dino');
+    }
+    public function testDinoUnder5MetersIsSmall():void
+    {
+        $dino = new Dinosaur(name: 'Big Eaty', length: 1);
+        self::assertSame('Small', $dino->getSizeDescription(), 'This is supposed to be a Small dino');
+    }
 }
